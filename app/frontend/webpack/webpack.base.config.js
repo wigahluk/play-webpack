@@ -46,9 +46,9 @@ var config = {
         extensions: prepend(['.ts','.js','.json','.css','.html'], '.async')
     },
     plugins: [
-        new webpack.ProvidePlugin({
-            'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
-        })
+        //new webpack.ProvidePlugin({
+        //    'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
+        //})
     ]
 };
 
