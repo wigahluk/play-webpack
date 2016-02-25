@@ -1,3 +1,11 @@
-export default function ($scope) {
-    $scope.name = 'Charles';
+export default class HomeController {
+    name: string;
+
+    constructor() {
+        this.name = 'World';
+    }
+
+    changeName() {
+        this.name = 'angular-tips';
+    }
 }
