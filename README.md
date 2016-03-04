@@ -39,7 +39,7 @@ This will create a Universal package (zip file) under `target/universal/`.
 To test this package, unzip it and run `.../bin/package_name`.
 
 
-## Running Play simulating production (using transpiled JavaScript)
+## Running Play on develop mode (using transpiled JavaScript)
 
 Use `activator run`
 
@@ -50,6 +50,12 @@ Use `ctrl + C` to stop the server. This will stop both servers.
 If you use `ctrl + D` to stop the process, this will only stop SBT and Play! server and you will need to terminate
 the Webpack server manually. One way to do this is: locate the process with `ps -x | grep webpack` and
 then `kill -9 [processNumber]` using the number refunded by the previous command.
+
+Some times you'll need to restart Webpack server, if you don't want to restart both servers, you can kill your Webpack
+process manually and start it again using: `npm start`
+
+Remember that Node and Webpack run under `./app/frontend` and you should be at that directory to run any `npm` command.
+
 
 ## Dependencies
 

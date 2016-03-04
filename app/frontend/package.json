@@ -9,7 +9,8 @@
   "scripts": {
     "test": "test",
     "build": "webpack -p --config ./webpack/webpack.base.config.js",
-    "start": "node ./webpack/webpack.server"
+    "start": "node ./webpack/webpack.server",
+    "postintsall": "typings install"
   },
   "repository": {
     "type": "git",

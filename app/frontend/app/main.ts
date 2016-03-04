@@ -11,4 +11,5 @@ console.log('pre-ready');
 angular.element(document).ready(() => {
     console.log('ready');
     angular.bootstrap(document, ['app']);
+
 });
