@@ -8,7 +8,9 @@
   },
   "scripts": {
     "test": "test",
-    "build": "webpack -p --config ./webpack/webpack.base.config.js",
+    "clean": "rm ../../public/bundles/*.*",
+    "build": "npm run clean && npm run build:webpack",
+    "build:webpack": "webpack -p --config ./webpack/webpack.base.config.js",
     "start": "node ./webpack/webpack.server",
     "postintsall": "typings install"
   },
