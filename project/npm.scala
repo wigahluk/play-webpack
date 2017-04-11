@@ -12,15 +12,14 @@ object WebpackServer {
             var process: Option[Process] = None // This is really ugly, how can I do this functionally?
 
             override def afterStarted(addr: InetSocketAddress): Unit = {
-                process = Some (Process("npm start", base).run)
+                process = if (System.getProperty("os.name").toUpperCase().indexOf("WIN") >= 0)
+                    Option(Process("cmd /c npm start", base).run)
+                else
+                    Option(Process("npm start", base).run)
             }
 
             override def afterStopped(): Unit = {
-                process.map(p =>
-                    {
-                        p.destroy()
-                    }
-                )
+                process.foreach(p => { p.destroy() })
                 process = None
             }
         }

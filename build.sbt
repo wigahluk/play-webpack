@@ -27,13 +27,17 @@ resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
 routesGenerator := InjectedRoutesGenerator
 
 // Starts: Webpack build task
+lazy val isWin = System.getProperty("os.name").toUpperCase().indexOf("WIN") >= 0
+val appPath = if (isWin) "\\app\\frontend" else "./app/frontend"
 val webpackBuild = taskKey[Unit]("Webpack build task.")
-webpackBuild := { Process("npm run build", file("./app/frontend")) ! }
+webpackBuild := {
+    if (isWin) Process("cmd /c npm run build", file(appPath)).run else Process("npm run build", file(appPath)).run
+}
 (packageBin in Universal) <<= (packageBin in Universal) dependsOn webpackBuild
 // Ends.
 
 
 // Starts: Webpack server process when running locally and build actions for productionbundle
-lazy val frontendDirectory = baseDirectory {_ / "app/frontend"}
+lazy val frontendDirectory = baseDirectory {_ / appPath}
 playRunHooks <+= frontendDirectory.map(base => WebpackServer(base))
 // Ends.
