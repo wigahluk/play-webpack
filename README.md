@@ -1,10 +1,31 @@
-Play! Framework with Webpack
-============================
+Play! Framework with Webpack & Angular
+======================================
+
+Update 2017-07-02
+-----------------
+
+I updated several pieces:
+
+* Play `2.6.0`
+* Scala `2.12.2`
+* TypeScript `2.4.1`
+* Webpack `3.0.0`
+* Angular `4.2.5`
+* RxJS `5.4.1`
+
+I also changed the target for transpiled JS to ES6. If you want to use ES5 you will need to add some extra polyfills.
+
+There is an known issue related to RxJS and TypeScript (<https://github.com/ReactiveX/rxjs/issues/2539>):
+
+`error TS2415: Class 'Subject<T>' incorrectly extends base class 'Observable<T>'`
+
+About
+-----
 
 The idea of this project is to show a basic Play! application integrated with Webpcak for development.
 You can use it as a seed or just copy an paste code fragments into your own project.
   
-When using SBT `run` command a Node server for Webpack will be also started on port 8080. You can change this in
+When using SBT `run` command, a Node server for Webpack will be also started on port 8080. You can change this in
 the file `webpack.server.js`.
 
 The TypeScript/JavaScript application is intended to be placed in the path `./app/frontend` of this project. This code 
@@ -49,9 +70,18 @@ Use `ctrl + C` to stop the server. This will stop both servers.
 
 If you use `ctrl + D` to stop the process, this will only stop SBT and Play! server and you will need to terminate
 the Webpack server manually. One way to do this is: locate the process with `ps -x | grep webpack` and
-then `kill -9 [processNumber]` using the number refunded by the previous command.
+then `kill -9 [processNumber]` using the number returned by the previous command.
 
 ## Dependencies
+
+* SBT
+* Play
+* Scala
+* Node
+* TypeScript
+* Webpack
+* Angular
+* RxJS
 
 ## TODO
 

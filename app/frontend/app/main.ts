@@ -1,6 +1,9 @@
-import 'angular2/bundles/angular2-polyfills';
-import 'angular2/core';
-import {bootstrap}    from 'angular2/platform/browser'
-import {AppComponent} from './app.component'
+import 'reflect-metadata';
+import 'core-js';
+import 'zone.js';
 
-bootstrap(AppComponent);
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import {AppModule} from './app.module'
+
+platformBrowserDynamic().bootstrapModule(AppModule);

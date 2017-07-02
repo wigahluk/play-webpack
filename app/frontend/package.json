@@ -2,7 +2,7 @@
   "name": "play-webpack",
   "version": "1.0.0",
   "description": "Play Framework integration with Webpack",
-  "main": "server,js",
+  "private": true,
   "directories": {
     "test": "test"
   },
@@ -16,22 +16,26 @@
     "url": "git@github.com:wigahluk/play-webpack.git"
   },
   "author": "Oscar Ponce",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "dependencies": {
-    "angular2": "2.0.0-beta.3",
-    "es6-promise": "^3.0.2",
-    "es6-shim": "^0.34.2",
-    "reflect-metadata": "^0.1.3",
-    "rxjs": "5.0.0-beta.0",
-    "zone.js": "0.5.11"
+    "@angular/common": "4.2.5",
+    "@angular/compiler": "4.2.5",
+    "@angular/core": "4.2.5",
+    "@angular/http": "4.2.5",
+    "@angular/platform-browser": "4.2.5",
+    "@angular/platform-browser-dynamic": "4.2.5",
+    "core-js": "2.4.1",
+    "reflect-metadata": "^0.1.10",
+    "rxjs": "5.4.1",
+    "zone.js": "0.8.12"
   },
   "devDependencies": {
-    "ts-loader": "^0.8.0",
-    "tsd": "^0.6.5",
-    "typescript": "^1.7.5",
-    "typings": "^0.6.6",
-    "webpack": "^1.12.13",
-    "webpack-dev-server": "^1.14.1"
+    "@types/angular": "1.6.25",
+    "@types/node": "8.0.7",
+    "ts-loader": "2.2.2",
+    "typescript": "2.4.1",
+    "webpack": "3.0.0",
+    "webpack-dev-server": "2.5.0"
   },
   "engines": {
     "node": ">= 5",
