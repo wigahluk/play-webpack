@@ -19,6 +19,6 @@ class Application @Inject()(ws: WSClient, assets: Assets, environment: Environme
       Ok(response.body).withHeaders(headers: _*).as(contentType)
     }
   } else {
-    assets.at("public/bundles", file)
+    assets.at("/public/bundles", file)
   }
 }
