@@ -23,7 +23,7 @@ publishArtifact in (Compile, packageDoc) := false
 
 // Starts: Webpack build task
 lazy val isWin = System.getProperty("os.name").toUpperCase().contains("WIN")
-val appPath = if (isWin) "\\app\\frontend" else "./app/frontend"
+val appPath = if (isWin) "app\\frontend" else "./app/frontend"
 val webpackBuild = taskKey[Unit]("Webpack build task.")
 
 webpackBuild := {
