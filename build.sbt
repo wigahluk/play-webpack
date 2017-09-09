@@ -27,8 +27,8 @@ val appPath = if (isWin) "app\\frontend" else "./app/frontend"
 val webpackBuild = taskKey[Unit]("Webpack build task.")
 
 webpackBuild := {
-  if (isWin) Process("cmd /c npm run build", file(appPath)).run
-  else Process("npm run build", file(appPath)).run
+  if (isWin) Process("cmd /c npm run build", file(appPath)) !
+  else Process("npm run build", file(appPath)) !
 }
 
 (packageBin in Universal) := ((packageBin in Universal) dependsOn webpackBuild).value
