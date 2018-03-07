@@ -14,6 +14,13 @@ libraryDependencies ++= Seq(
   "org.scalatestplus.play" %% "scalatestplus-play" % "3.0.0" % Test
 )
 
+val stage = taskKey[Unit]("Stage task")
+
+val Stage = config("stage")
+
+stage := {
+  (dist in Compile).value
+}
 // Starts: Prevent documentation of API for production bundles
 sources in (Compile, doc) := Seq.empty
 publishArtifact in (Compile, packageDoc) := false
