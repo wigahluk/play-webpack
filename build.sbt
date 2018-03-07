@@ -37,4 +37,4 @@ webpackBuild := {
 // Starts: Webpack server process when running locally and build actions for production bundle
 lazy val frontendDirectory = baseDirectory {_ / appPath}
 playRunHooks += frontendDirectory.map(WebpackServer(_)).value
-// Ends.
+// End      
